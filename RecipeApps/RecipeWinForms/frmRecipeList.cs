@@ -22,12 +22,12 @@ namespace RecipeWinForms
         }
       
 
-        private void ShowPresidentForm(int rowindex)
+        private void ShowRecipeForm(int rowindex)
         {
             int id = (int)gRecipe.Rows[rowindex].Cells["RecipeId"].Value;
             //Debug.Print(id.ToString());
             frmRecipe frm = new frmRecipe();
-            //frm.ShowForm(id);
+            frm.ShowForm(id);
         }
 
         private void SearchForRecipe(string lastname)
@@ -51,7 +51,7 @@ namespace RecipeWinForms
 
         private void GRecipe_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {
-            ShowPresidentForm(e.RowIndex);
+            ShowRecipeForm(e.RowIndex);
         }
         private void BtnSearch_Click(object? sender, EventArgs e)
         {

@@ -13,25 +13,32 @@ namespace RecipeWinForms
 {
     public partial class frmRecipe : Form
     {
+        string path = Application.StartupPath+@"\images\";
         public frmRecipe()
         {
             InitializeComponent();
         }
 
-        public void ShowForm(int presidentid)
+        public void ShowForm(int recipeid)
         {
-            string sql = "Select p.*,y.PartyName from president p join party y on p.PartyId = y.PartyId where p.presidentid =" + presidentid.ToString();
+            string sql = "Select r.*,c.CuisineName,u.UserFirstName+' '+u.UserLastName as UserCreated" +
+                " from recipe r join cuisine c on c.CuisineId = r.CuisineId " +
+                "join users u on u.UserId=r.CreateByUserId where r.recipeid ="
+                + recipeid.ToString();
             DataTable dt = SQLUtility.GetDataTable(sql);
-            lblParty.DataBindings.Add("Text", dt, "PartyName");
-            lblNum.DataBindings.Add("Text", dt, "Num");
-            txtLastName.DataBindings.Add("Text", dt, "LastName");
-            txtFirstName.DataBindings.Add("Text", dt, "FirstName");
-
-            txtDateBorn.DataBindings.Add("Text", dt, "DateBorn");
-            txtDateDied.DataBindings.Add("Text", dt, "DateDied");
-            txtTermStart.DataBindings.Add("Text", dt, "TermStart");
-            txtTermEnd.DataBindings.Add("Text", dt, "TermEnd");
-
+            txtRecipeName.DataBindings.Add("Text", dt, "RecipeName");
+            lblCuisine.DataBindings.Add("Text", dt, "CuisineName");
+            lblUserCreated.DataBindings.Add("Text", dt, "UserCreated");
+            txtYields.DataBindings.Add("Text", dt, "Yields");
+            txtCalories.DataBindings.Add("Text", dt, "Calories");
+            txtDatePublished.DataBindings.Add("Text", dt, "PublishedDate");
+            txtDateArchived.DataBindings.Add("Text", dt, "ArchivedDate");
+            lblCurrentStatus.DataBindings.Add("Text", dt, "CurrentStatus");
+            string image =path+dt.Rows[0].Field<string>("RecipePic");
+            if (File.Exists(image))
+            {
+                picRecipe.ImageLocation = image;
+            }
             this.Show();
         }
     }

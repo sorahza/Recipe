@@ -9,6 +9,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Recipe_Challah.jpg" />
+    <None Remove="Images\Recipe_Coleslaw.jpg" />
+    <None Remove="Images\Recipe_Cucumber_Salad.jpg" />
+    <None Remove="Images\Recipe_Fruit_Salad.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Recipe_Challah.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Recipe_Coleslaw.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Recipe_Cucumber_Salad.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Recipe_Fruit_Salad.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\CPUFramework\CPUFramework.csproj" />
   </ItemGroup>
 

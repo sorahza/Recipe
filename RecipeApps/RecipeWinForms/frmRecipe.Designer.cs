@@ -41,7 +41,16 @@
             this.lblCaptionPic = new System.Windows.Forms.Label();
             this.txtRecipeName = new System.Windows.Forms.TextBox();
             this.lblCuisine = new System.Windows.Forms.Label();
+            this.lblUserCreated = new System.Windows.Forms.Label();
+            this.txtYields = new System.Windows.Forms.TextBox();
+            this.txtCalories = new System.Windows.Forms.TextBox();
+            this.lblDateCreated = new System.Windows.Forms.Label();
+            this.txtDatePublished = new System.Windows.Forms.TextBox();
+            this.txtDateArchived = new System.Windows.Forms.TextBox();
+            this.lblCurrentStatus = new System.Windows.Forms.Label();
+            this.picRecipe = new System.Windows.Forms.PictureBox();
             this.tblMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).BeginInit();
             this.SuspendLayout();
             // 
             // tblMain
@@ -61,7 +70,16 @@
             this.tblMain.Controls.Add(this.lblCaptionPic, 0, 9);
             this.tblMain.Controls.Add(this.txtRecipeName, 1, 0);
             this.tblMain.Controls.Add(this.lblCuisine, 1, 1);
+            this.tblMain.Controls.Add(this.lblUserCreated, 1, 2);
+            this.tblMain.Controls.Add(this.txtYields, 1, 3);
+            this.tblMain.Controls.Add(this.txtCalories, 1, 4);
+            this.tblMain.Controls.Add(this.lblDateCreated, 1, 5);
+            this.tblMain.Controls.Add(this.txtDatePublished, 1, 6);
+            this.tblMain.Controls.Add(this.txtDateArchived, 1, 7);
+            this.tblMain.Controls.Add(this.lblCurrentStatus, 1, 8);
+            this.tblMain.Controls.Add(this.picRecipe, 1, 9);
             this.tblMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblMain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tblMain.Location = new System.Drawing.Point(0, 0);
             this.tblMain.Name = "tblMain";
             this.tblMain.RowCount = 10;
@@ -200,20 +218,102 @@
             // 
             // txtRecipeName
             // 
-            this.txtRecipeName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtRecipeName.Location = new System.Drawing.Point(244, 11);
+            this.txtRecipeName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtRecipeName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRecipeName.Location = new System.Drawing.Point(244, 3);
             this.txtRecipeName.Name = "txtRecipeName";
-            this.txtRecipeName.Size = new System.Drawing.Size(100, 23);
+            this.txtRecipeName.Size = new System.Drawing.Size(236, 25);
             this.txtRecipeName.TabIndex = 10;
+            this.txtRecipeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblCuisine
             // 
-            this.lblCuisine.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblCuisine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCuisine.Location = new System.Drawing.Point(244, 56);
+            this.lblCuisine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCuisine.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCuisine.Location = new System.Drawing.Point(244, 45);
             this.lblCuisine.Name = "lblCuisine";
-            this.lblCuisine.Size = new System.Drawing.Size(100, 23);
+            this.lblCuisine.Size = new System.Drawing.Size(236, 45);
             this.lblCuisine.TabIndex = 11;
+            // 
+            // lblUserCreated
+            // 
+            this.lblUserCreated.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblUserCreated.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblUserCreated.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUserCreated.Location = new System.Drawing.Point(244, 90);
+            this.lblUserCreated.Name = "lblUserCreated";
+            this.lblUserCreated.Size = new System.Drawing.Size(236, 45);
+            this.lblUserCreated.TabIndex = 12;
+            // 
+            // txtYields
+            // 
+            this.txtYields.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtYields.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtYields.Location = new System.Drawing.Point(244, 138);
+            this.txtYields.Name = "txtYields";
+            this.txtYields.Size = new System.Drawing.Size(236, 25);
+            this.txtYields.TabIndex = 13;
+            this.txtYields.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtCalories
+            // 
+            this.txtCalories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCalories.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCalories.Location = new System.Drawing.Point(244, 183);
+            this.txtCalories.Name = "txtCalories";
+            this.txtCalories.Size = new System.Drawing.Size(236, 25);
+            this.txtCalories.TabIndex = 14;
+            this.txtCalories.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblDateCreated
+            // 
+            this.lblDateCreated.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDateCreated.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDateCreated.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDateCreated.Location = new System.Drawing.Point(244, 225);
+            this.lblDateCreated.Name = "lblDateCreated";
+            this.lblDateCreated.Size = new System.Drawing.Size(236, 45);
+            this.lblDateCreated.TabIndex = 15;
+            // 
+            // txtDatePublished
+            // 
+            this.txtDatePublished.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDatePublished.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDatePublished.Location = new System.Drawing.Point(244, 273);
+            this.txtDatePublished.Name = "txtDatePublished";
+            this.txtDatePublished.Size = new System.Drawing.Size(236, 25);
+            this.txtDatePublished.TabIndex = 16;
+            this.txtDatePublished.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtDateArchived
+            // 
+            this.txtDateArchived.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDateArchived.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDateArchived.Location = new System.Drawing.Point(244, 318);
+            this.txtDateArchived.Name = "txtDateArchived";
+            this.txtDateArchived.Size = new System.Drawing.Size(236, 25);
+            this.txtDateArchived.TabIndex = 17;
+            this.txtDateArchived.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblCurrentStatus
+            // 
+            this.lblCurrentStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCurrentStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCurrentStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCurrentStatus.Location = new System.Drawing.Point(244, 360);
+            this.lblCurrentStatus.Name = "lblCurrentStatus";
+            this.lblCurrentStatus.Size = new System.Drawing.Size(236, 45);
+            this.lblCurrentStatus.TabIndex = 18;
+            // 
+            // picRecipe
+            // 
+            this.picRecipe.Location = new System.Drawing.Point(244, 408);
+            this.picRecipe.Name = "picRecipe";
+            this.picRecipe.Size = new System.Drawing.Size(227, 46);
+            this.picRecipe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRecipe.TabIndex = 19;
+            this.picRecipe.TabStop = false;
             // 
             // frmRecipe
             // 
@@ -225,6 +325,7 @@
             this.Text = "Recipe";
             this.tblMain.ResumeLayout(false);
             this.tblMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,5 +345,13 @@
         private Label lblCaptionPic;
         private TextBox txtRecipeName;
         private Label lblCuisine;
+        private Label lblUserCreated;
+        private TextBox txtYields;
+        private TextBox txtCalories;
+        private Label lblDateCreated;
+        private TextBox txtDatePublished;
+        private TextBox txtDateArchived;
+        private Label lblCurrentStatus;
+        private PictureBox picRecipe;
     }
 }
