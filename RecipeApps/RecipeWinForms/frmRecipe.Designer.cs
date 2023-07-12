@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecipe));
             this.tblMain = new System.Windows.Forms.TableLayoutPanel();
             this.lblCaptionRecipeName = new System.Windows.Forms.Label();
             this.lblCaptionCuisine = new System.Windows.Forms.Label();
@@ -40,17 +41,23 @@
             this.lblCaptionCurrentStatus = new System.Windows.Forms.Label();
             this.lblCaptionPic = new System.Windows.Forms.Label();
             this.txtRecipeName = new System.Windows.Forms.TextBox();
-            this.lblCuisine = new System.Windows.Forms.Label();
-            this.lblUserCreated = new System.Windows.Forms.Label();
             this.txtYields = new System.Windows.Forms.TextBox();
             this.txtCalories = new System.Windows.Forms.TextBox();
-            this.lblDateCreated = new System.Windows.Forms.Label();
-            this.txtDatePublished = new System.Windows.Forms.TextBox();
-            this.txtDateArchived = new System.Windows.Forms.TextBox();
+            this.lblCreatedDate = new System.Windows.Forms.Label();
+            this.txtPublishedDate = new System.Windows.Forms.TextBox();
+            this.txtArchivedDate = new System.Windows.Forms.TextBox();
             this.lblCurrentStatus = new System.Windows.Forms.Label();
             this.picRecipe = new System.Windows.Forms.PictureBox();
+            this.lstCuisineName = new System.Windows.Forms.ComboBox();
+            this.lstUserCreated = new System.Windows.Forms.ComboBox();
+            this.tsMain = new System.Windows.Forms.ToolStrip();
+            this.btnSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnDelete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tblMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).BeginInit();
+            this.tsMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblMain
@@ -69,18 +76,17 @@
             this.tblMain.Controls.Add(this.lblCaptionCurrentStatus, 0, 8);
             this.tblMain.Controls.Add(this.lblCaptionPic, 0, 9);
             this.tblMain.Controls.Add(this.txtRecipeName, 1, 0);
-            this.tblMain.Controls.Add(this.lblCuisine, 1, 1);
-            this.tblMain.Controls.Add(this.lblUserCreated, 1, 2);
             this.tblMain.Controls.Add(this.txtYields, 1, 3);
             this.tblMain.Controls.Add(this.txtCalories, 1, 4);
-            this.tblMain.Controls.Add(this.lblDateCreated, 1, 5);
-            this.tblMain.Controls.Add(this.txtDatePublished, 1, 6);
-            this.tblMain.Controls.Add(this.txtDateArchived, 1, 7);
+            this.tblMain.Controls.Add(this.lblCreatedDate, 1, 5);
+            this.tblMain.Controls.Add(this.txtPublishedDate, 1, 6);
+            this.tblMain.Controls.Add(this.txtArchivedDate, 1, 7);
             this.tblMain.Controls.Add(this.lblCurrentStatus, 1, 8);
             this.tblMain.Controls.Add(this.picRecipe, 1, 9);
-            this.tblMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblMain.Controls.Add(this.lstCuisineName, 1, 1);
+            this.tblMain.Controls.Add(this.lstUserCreated, 1, 2);
             this.tblMain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tblMain.Location = new System.Drawing.Point(0, 0);
+            this.tblMain.Location = new System.Drawing.Point(0, 39);
             this.tblMain.Name = "tblMain";
             this.tblMain.RowCount = 10;
             this.tblMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -226,26 +232,6 @@
             this.txtRecipeName.TabIndex = 10;
             this.txtRecipeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblCuisine
-            // 
-            this.lblCuisine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCuisine.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCuisine.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCuisine.Location = new System.Drawing.Point(244, 45);
-            this.lblCuisine.Name = "lblCuisine";
-            this.lblCuisine.Size = new System.Drawing.Size(236, 45);
-            this.lblCuisine.TabIndex = 11;
-            // 
-            // lblUserCreated
-            // 
-            this.lblUserCreated.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblUserCreated.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUserCreated.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblUserCreated.Location = new System.Drawing.Point(244, 90);
-            this.lblUserCreated.Name = "lblUserCreated";
-            this.lblUserCreated.Size = new System.Drawing.Size(236, 45);
-            this.lblUserCreated.TabIndex = 12;
-            // 
             // txtYields
             // 
             this.txtYields.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -266,35 +252,35 @@
             this.txtCalories.TabIndex = 14;
             this.txtCalories.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblDateCreated
+            // lblCreatedDate
             // 
-            this.lblDateCreated.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDateCreated.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDateCreated.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDateCreated.Location = new System.Drawing.Point(244, 225);
-            this.lblDateCreated.Name = "lblDateCreated";
-            this.lblDateCreated.Size = new System.Drawing.Size(236, 45);
-            this.lblDateCreated.TabIndex = 15;
+            this.lblCreatedDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCreatedDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCreatedDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCreatedDate.Location = new System.Drawing.Point(244, 225);
+            this.lblCreatedDate.Name = "lblCreatedDate";
+            this.lblCreatedDate.Size = new System.Drawing.Size(236, 45);
+            this.lblCreatedDate.TabIndex = 15;
             // 
-            // txtDatePublished
+            // txtPublishedDate
             // 
-            this.txtDatePublished.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDatePublished.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDatePublished.Location = new System.Drawing.Point(244, 273);
-            this.txtDatePublished.Name = "txtDatePublished";
-            this.txtDatePublished.Size = new System.Drawing.Size(236, 25);
-            this.txtDatePublished.TabIndex = 16;
-            this.txtDatePublished.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPublishedDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPublishedDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPublishedDate.Location = new System.Drawing.Point(244, 273);
+            this.txtPublishedDate.Name = "txtPublishedDate";
+            this.txtPublishedDate.Size = new System.Drawing.Size(236, 25);
+            this.txtPublishedDate.TabIndex = 16;
+            this.txtPublishedDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtDateArchived
+            // txtArchivedDate
             // 
-            this.txtDateArchived.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDateArchived.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDateArchived.Location = new System.Drawing.Point(244, 318);
-            this.txtDateArchived.Name = "txtDateArchived";
-            this.txtDateArchived.Size = new System.Drawing.Size(236, 25);
-            this.txtDateArchived.TabIndex = 17;
-            this.txtDateArchived.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtArchivedDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtArchivedDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtArchivedDate.Location = new System.Drawing.Point(244, 318);
+            this.txtArchivedDate.Name = "txtArchivedDate";
+            this.txtArchivedDate.Size = new System.Drawing.Size(236, 25);
+            this.txtArchivedDate.TabIndex = 17;
+            this.txtArchivedDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblCurrentStatus
             // 
@@ -315,18 +301,80 @@
             this.picRecipe.TabIndex = 19;
             this.picRecipe.TabStop = false;
             // 
+            // lstCuisineName
+            // 
+            this.lstCuisineName.FormattingEnabled = true;
+            this.lstCuisineName.Location = new System.Drawing.Point(244, 48);
+            this.lstCuisineName.Name = "lstCuisineName";
+            this.lstCuisineName.Size = new System.Drawing.Size(227, 25);
+            this.lstCuisineName.TabIndex = 21;
+            // 
+            // lstUserCreated
+            // 
+            this.lstUserCreated.FormattingEnabled = true;
+            this.lstUserCreated.Location = new System.Drawing.Point(244, 93);
+            this.lstUserCreated.Name = "lstUserCreated";
+            this.lstUserCreated.Size = new System.Drawing.Size(214, 25);
+            this.lstUserCreated.TabIndex = 22;
+            // 
+            // tsMain
+            // 
+            this.tsMain.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnSave,
+            this.toolStripSeparator1,
+            this.btnDelete,
+            this.toolStripSeparator2});
+            this.tsMain.Location = new System.Drawing.Point(0, 0);
+            this.tsMain.Name = "tsMain";
+            this.tsMain.Size = new System.Drawing.Size(491, 28);
+            this.tsMain.TabIndex = 2;
+            this.tsMain.Text = "toolStrip1";
+            // 
+            // btnSave
+            // 
+            this.btnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(47, 25);
+            this.btnSave.Text = "&Save";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(58, 25);
+            this.btnDelete.Text = "Delete";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
+            // 
             // frmRecipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 457);
+            this.ClientSize = new System.Drawing.Size(491, 528);
+            this.Controls.Add(this.tsMain);
             this.Controls.Add(this.tblMain);
             this.Name = "frmRecipe";
             this.Text = "Recipe";
             this.tblMain.ResumeLayout(false);
             this.tblMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRecipe)).EndInit();
+            this.tsMain.ResumeLayout(false);
+            this.tsMain.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -344,14 +392,19 @@
         private Label lblCaptionCurrentStatus;
         private Label lblCaptionPic;
         private TextBox txtRecipeName;
-        private Label lblCuisine;
-        private Label lblUserCreated;
         private TextBox txtYields;
         private TextBox txtCalories;
-        private Label lblDateCreated;
-        private TextBox txtDatePublished;
-        private TextBox txtDateArchived;
+        private Label lblCreatedDate;
+        private TextBox txtPublishedDate;
+        private TextBox txtArchivedDate;
         private Label lblCurrentStatus;
         private PictureBox picRecipe;
+        private ToolStrip tsMain;
+        private ToolStripButton btnSave;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripButton btnDelete;
+        private ToolStripSeparator toolStripSeparator2;
+        private ComboBox lstCuisineName;
+        private ComboBox lstUserCreated;
     }
 }
